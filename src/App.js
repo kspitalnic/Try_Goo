@@ -3,25 +3,17 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './booking/Home';
 import Login from './auth/Login';
 import Register from './auth/Register';
-import { Link } from 'react-router-dom';
-
-const TopNav = () => (
-  <div className="nav bg-light d-flex justify-content-between">
-    <Link className="nav-Link" to="/"> Home  </Link>
-    <Link className="nav-Link" to="/login"> Login </Link>
-    <Link className="nav-Link" to="/register"> Register </Link>
-  </div>
-)
+import TopNav from "./components/TopNav"
 
 function App() {
   return (
     <BrowserRouter>
-    {TopNav()}
-    <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/login" component={Login}/>
-      <Route exact path="/register" component={Register}/>
-    </Switch>
+      <TopNav />
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/register" component={Register}/>
+      </Switch>
     </BrowserRouter>
   );
 }
