@@ -3,11 +3,11 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
-const Register = () => {
+const Register = ({ history }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
@@ -17,7 +17,7 @@ const Register = () => {
     });
     console.log(`REGISTER USER ==>`, res);
     toast.success('Register success. Please login.');
-
+    history.push("/login");
     } catch (err) {
         console.log(err)
         if(err.response.status === 400) toast.error(err.response.data);
