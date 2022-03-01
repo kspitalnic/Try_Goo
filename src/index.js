@@ -15,8 +15,6 @@ const store = createStore(rootReducer, composeWithDevTools())
 
 // provide redux store to the entire app 
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
